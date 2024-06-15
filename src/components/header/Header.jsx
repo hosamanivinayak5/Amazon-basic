@@ -113,6 +113,7 @@ const Header =()=>{
         {
           userInfo&& ( <div className="flex flex-col items-start justify-center headerHover" onClick={logout}>
               <LogoutIcon/>
+              <p className="text-xs font-semibold mt-3 text-whiteText">Logout</p>
           </div>)
         }
         
