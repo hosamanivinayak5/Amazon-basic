@@ -14,23 +14,7 @@ const Products = () => {
   const userInfo=useSelector((state)=>state.amazon.userInfo)
     const data=useLoaderData();
     const productdata=data.data;
-    const handleaddtocart=(item)=>{
-      if(!userInfo)
-      {
-        navigate("/signin")
-      }
-      else{
-      dispatch(addToCart({
-        id:item.id,
-        title:item.title,
-        description:item.description,
-        price:item.price,
-        category:item.category,
-        image:item.image,
-        quantity:1
-      }))
-    }
-    }
+    
   return (
     <div className='max-w-screen-2xl mx-auto grid grid-col-1 md:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-10 px-4'>
       {
@@ -62,7 +46,23 @@ const Products = () => {
                 <StarIcon/>
                 </div>
               </div>
-              <button onClick={handleaddtocart} className='w-full font-titleFont font-medium text-base bg-gradient-to-tr from-yellow-400 to-yellow-200 border rounded-md
+              <button onClick={()=>{
+      if(!userInfo)
+      {
+        navigate("/signin")
+      }
+      else{
+      dispatch(addToCart({
+        id:item.id,
+        title:item.title,
+        description:item.description,
+        price:item.price,
+        category:item.category,
+        image:item.image,
+        quantity:1
+      }))
+    }
+    }} className='w-full font-titleFont font-medium text-base bg-gradient-to-tr from-yellow-400 to-yellow-200 border rounded-md
                bg-yellow-500 hover:from-yellow-300 hover:to-yellow-400 border-yellow-500 hover:border-yellow-700
                active:bg-gradient-to-bl active:from-yellow-400 active:to-yellow-500 duration-200 py-1.5 mt-3'>Add to Cart</button>
               
