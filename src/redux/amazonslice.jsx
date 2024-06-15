@@ -15,9 +15,9 @@ export const amazonslice=createSlice({
                 {
                     item.quantity+=action.payload.quantity;
                 }
-                else{
+            
                     state.products.push(action.payload);
-                }
+                
             
         },
         incrementQuantity:(state,action)=>{
