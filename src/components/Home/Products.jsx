@@ -14,7 +14,7 @@ const Products = () => {
   const userInfo=useSelector((state)=>state.amazon.userInfo)
     const data=useLoaderData();
     const productdata=data.data;
-    const handleaddtocart=()=>{
+    const handleaddtocart=(item)=>{
       if(!userInfo)
       {
         navigate("/signin")
